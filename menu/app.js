@@ -76,9 +76,32 @@ const menu = [
 
 const sectionCenter = document.querySelector('.section-center');
 
+const filterBtns = document.querySelectorAll('.filter-btn');
+
+//load items
 window.addEventListener('DOMContentLoaded',function(){
   displayMenuItems(menu)
-})
+});
+
+//filter buttons
+filterBtns.forEach(function(btn){
+  btn.addEventListener('click',function(e){
+    const category = e.currentTarget.dataset.id;
+
+    const menuCategory = menu.filter(function(menuItem){
+      if(menuItem.category === category){
+        return menuItem
+      }
+    });
+    if(category === 'all'){
+      displayMenuItems(menu)
+    }
+    else{
+      displayMenuItems(menuCategory)
+    }
+  });
+});
+
 
 
 
