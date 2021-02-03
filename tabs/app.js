@@ -15,6 +15,7 @@ about.addEventListener('click',function(e){
         articles.forEach(function(article){
             article.classList.remove('active');
         })
+        //any element that has id matching data-id ..show it
         const element = document.getElementById(id)
         element.classList.add('active')
     }
