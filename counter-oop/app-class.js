@@ -42,6 +42,7 @@ class Counter {
     reset(){
         this.value = 0;
         this.valueDOM.textContent = this.value;
+        
     }
 };
 
